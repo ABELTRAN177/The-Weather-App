@@ -101,7 +101,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // clear button function
 // helps clear all the cities listed below the search container 
+// citySearch = [] clears the city search so that when user refreshes the page, the cities are not displayed
 document.getElementById('clearBtn').addEventListener('click', function() {
+    citySearch = [];
     localStorage.removeItem('citySearch');
     document.getElementById('cityList').innerHTML = '';
 });
