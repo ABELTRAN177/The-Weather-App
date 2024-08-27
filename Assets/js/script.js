@@ -26,6 +26,7 @@ function getForecast(cityName) {
     
         todaysWeather.innerHTML = `
             <div class="card-body">
+                <h2 class="card-header"> Today's Forecast</h2>
                 <h5 class="card-title">${date}</h5>
                 <img src="${iconUrl}" alt="weather icon">
                 <p class="card-text">Temp: ${temp} F</p>
@@ -76,15 +77,31 @@ document.getElementById('submit').addEventListener('click', function(event) {
     citySearch.push(city);
     localStorage.setItem('citySearch', JSON.stringify(citySearch));
     getForecast(city);  
-});   
-// to keep the cities under the line 
 
-// document.getElementById('cityForm').addEventListener('submit', function(event) {
-//     event.preventDefault();
-//     var city = document.getElementById('city').value;
-//     var cityList = document.getElementById('cityList');
-//     var cityDiv = document.createElement('div');
-//     cityDiv.textContent = city;
-//     cityList.appendChild(cityDiv);
-//     document.getElementById('city').value = '';
-// });
+    var cityList = document.getElementById('cityList');
+    var cityDiv = document.createElement('div');
+    cityDiv.textContent = city;
+    cityList.appendChild(cityDiv);
+    document.getElementById('city').value = '';
+});   
+
+// to keep the cities under the line 
+// saves city searches to local storage
+// displays the city searches below the search container
+document.addEventListener('DOMContentLoaded', function() {
+    var citySearch = JSON.parse(localStorage.getItem('citySearch'));
+    var cityList = document.getElementById('cityList');
+
+    citySearch.forEach(city => {
+        var cityDiv = document.createElement('div');
+        cityDiv.textContent = city;
+        cityList.appendChild(cityDiv);
+    });
+});
+
+// clear button function
+// helps clear all the cities listed below the search container 
+document.getElementById('clearBtn').addEventListener('click', function() {
+    localStorage.removeItem('citySearch');
+    document.getElementById('cityList').innerHTML = '';
+});
