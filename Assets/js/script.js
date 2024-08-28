@@ -81,6 +81,7 @@ document.getElementById('submit').addEventListener('click', function(event) {
     var cityList = document.getElementById('cityList');
     var cityDiv = document.createElement('div');
     cityDiv.textContent = city;
+    cityDiv.classList.add('city');
     cityList.appendChild(cityDiv);
     document.getElementById('city').value = '';
 });   
@@ -95,7 +96,12 @@ document.addEventListener('DOMContentLoaded', function() {
     citySearch.forEach(city => {
         var cityDiv = document.createElement('div');
         cityDiv.textContent = city;
+        cityDiv.classList.add('city');
+        cityDiv.addEventListener('click', function() {
+            getForecast(city);
+        });
         cityList.appendChild(cityDiv);
+        document.getElementById('city').value = '';
     });
 });
 
