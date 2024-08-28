@@ -1,6 +1,6 @@
-## The Blog Spot 
+## The Weather App
 
-
+<img width="1800" alt="Screenshot 2024-08-27 at 9 34 33 PM" src="https://github.com/user-attachments/assets/e0ebcd48-8c2a-469e-896e-b1c0824824d8">
 
 
 ## Description
