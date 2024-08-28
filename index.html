@@ -16,31 +16,36 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
+                <!-- user is presented with an option to fill in a city name and search  -->
                 <h4 class="text-left">Enter City Name:</h4>
                 <form id="cityForm">
                     <input type="text" id="city" class="form-control" placeholder="City Name">
                     <button id="submit" type="submit" class="btn btn-primary mt-3"
                         style="width: 100%; height: 40px;">Search</button>
                 </form>
+                <!-- line separates submit form from the city history -->
                 <hr>
                 <div id="cityList" class="list-group"></div>
+                <!-- button to clear history of cities  -->
                 <button id="clearBtn" type="submit" class="btn btn-primary mt-3"
                     style="width: 100%; height: 40px;">Clear</button>
             </div>
             <div class="col-md-9">
+                <!-- box storing the current weather for the date submitted -->
                 <div class="box" id="todaysWeather">
                     <h4>Today's Weather Forecast</h3>
                 </div>
+                <!-- 5 containers display depicting the weather and additional elements of 5 consecutive days 
+                in addition to the date of search -->
                 <div id="forecast" class="d-flex flrex-column justify-content-start">
-                         <h3> 5-Day Forecast</h3>
-                
+                    <h3> 5-Day Forecast</h3>
                     <div>
-                        <div id="forecastContainer" class="mt-5 ml-3" style="height: 130%; width: 130%; margin-top: 3rem;"> </div>
+                        <!-- style of each container for a 5 day forecast -->
+                        <div id="forecastContainer" class="mt-5 ml-3"
+                            style="height: 130%; width: 130%; margin-top: 3rem;"> </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 
